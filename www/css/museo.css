@@ -1,0 +1,68 @@
+
+.title {
+	font-size: 5em;
+	margin: -.2em 0 -.3em;
+	letter-spacing: -.05em;
+	display:inline-block;
+}
+.subline {
+	font-size: 1.6em;
+	letter-spacing: -.04em;
+	display:inline;
+	color: #CCC;
+}
+
+.museums-list h3 a{
+	color: #222;
+}
+.museums-list h3 a:hover{
+	color: #2284a1;
+}
+
+.museums-list .odd {
+	background:#ffffd6;
+	border-bottom: 1px solid #eea;
+	border-top: 1px solid #eea;
+}
+
+.museums-list h3 {
+	margin: 0 1em 0 0;
+}
+
+.museums-list>li {
+	padding-top: .6em;
+}
+
+.categories .button{
+	margin:0;
+}
+
+.categories ul{
+	margin-left:1.5em;
+	margin-bottom:.9em;
+	margin-top:.3em;
+	padding-left: 1.5em;
+/*	border-left:1px solid #666; */
+}
+
+.categories ul li{
+	margin-bottom:0;
+	margin-top:0em;
+}
+
+input.name{
+	font-size: 2em;
+	padding:0 .6em;
+}
+
+textarea {
+	height: 200px;
+}
+
+#s2id_categories{
+	padding:0;
+}
+
+.categories .button{
+    border-width: 0;
+}
