@@ -77,7 +77,7 @@ class categoryManager extends objectManager implements dbObjectInterface
 	function recursiveSearchInTree($tree, $value, $method = 'getId') {
 	
 		foreach ($tree as $item) {
-			if ($item->$method() === $value) {
+			if ($item->$method() == $value) {
 				return $item;
 			};
 			if (count($item->getChildren())) {
@@ -229,11 +229,11 @@ EOT;
 			// handle errors coming form db insertion
 			$report['hasError'] = true;
 			if ($e->errorInfo[0] == 23000 && strstr($e->errorInfo[2],'category_parent')) {
-				$report['errors']['parentid'][] = "Impossible d'assigner cette catégorie";
+				$report['errors']['parentid'][] = "Impossible d’assigner cette catégorie";
 			} elseif ($e->errorInfo[0] == 23000 && strstr($e->errorInfo[2],'name')) {
-				$report['errors']['name'][] = "Une catégorie soeur existe déjà avec ce nom";
+				$report['errors']['name'][] = "Une catégorie sœur existe déjà avec ce nom";
 			} else {
-				$report['errors']['name'][] = "L'insertion du musée est refusée pour une raison inconnue";
+				$report['errors']['name'][] = "L’insertion de la catégorie est refusée pour une raison inconnue";
 			}
 		}
 		

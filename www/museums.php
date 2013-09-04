@@ -24,7 +24,7 @@ extract($data);
 		</h3>
 		<ul class="button-group round ">
 			<li><a class="button tiny " href="showMuseum.php?id=<?php echo $museum->getId() ?>">Voir</a></li>
-			<li><a class="button tiny " href="editMuseum.php?id=<?php echo $museum->getId() ?>">Editer</a></li>
+			<li><a class="button tiny " href="editMuseum.php?id=<?php echo $museum->getId() ?>">Éditer</a></li>
 			<li><a class="button alert tiny" href="deleteMuseum.php?id=<?php echo $museum->getId() ?>">&#x2715;	</a></li>
 		</ul>
 		<div style="clear:left;">
