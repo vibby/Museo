@@ -8,9 +8,9 @@
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
 
-namespace museo\lib;
+namespace Museo\Lib;
 
-interface dbObjectInterface
+interface DbObjectInterface
 {
 	static function getTableName();
 	static function getFields();

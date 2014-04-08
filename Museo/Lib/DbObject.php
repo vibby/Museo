@@ -8,9 +8,9 @@
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
  
-namespace museo\lib;
+namespace Museo\Lib;
 
-class dbObject
+class DbObject
 {
 	function __construct($item) {
 		// when an object is created, we need set in it all data from db

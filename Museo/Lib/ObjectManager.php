@@ -8,7 +8,7 @@
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
  
-namespace museo\lib;
+namespace Museo\Lib;
 
 class objectManager
 {
@@ -61,7 +61,6 @@ class objectManager
 	public function initUpdate($data) {
 	
 		$query = "UPDATE `".$this->getTableName()."` SET ";
-		$tableName = $this->getTableName();
 		$i = 0;
 		$directFields = array_intersect(array_keys($this->getFilters()), $this->getFields());
 		unset ($directFields[array_search('id',$directFields)]);

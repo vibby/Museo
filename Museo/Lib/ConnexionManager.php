@@ -7,15 +7,15 @@
  *
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
- 
-namespace museo\lib;
 
-class connexionManager{
+namespace Museo\Lib;
+
+class ConnexionManager{
 
 	private $dbHost = null;
 	private $dbName = null;
 	private $dbUser = null;
-	private $dbPassword = null;  
+	private $dbPassword = null;
 
 	public $connexion = '';
 
@@ -24,7 +24,7 @@ class connexionManager{
 		$this->dbHost = $dbHost;
 		$this->dbName = $dbName;
 		$this->dbUser = $dbUser;
-		$this->dbPassword = $dbPassword;	
+		$this->dbPassword = $dbPassword;
 		$this->connect();
 	}
 
@@ -34,7 +34,7 @@ class connexionManager{
 			$this->connexion = new \PDO("mysql:host=".$this->dbHost.";dbname=".$this->dbName."",$this->dbUser, $this->dbPassword);
 			$this->connexion->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
 		}catch(\PDOException $e){
-			echo 'We\'re sorry but there was an error while trying to connect to the database';
+			throw new \exception('We\'re sorry but there was an error while trying to connect to the database');
 		}
-	}   
+	}
 }

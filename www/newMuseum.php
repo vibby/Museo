@@ -2,7 +2,7 @@
 
 require ("../autoload.php");
 
-$controller = new museo\controller\museumController();
+$controller = new Museo\Controller\MuseumController();
 $data = $controller->newAction();
 extract($data);
 
@@ -12,7 +12,7 @@ extract($data);
 
 <div class="row">
 	<div class="large-12 columns">
-	
+
 		<form action="createMuseum.php" method="POST">
 		  <fieldset>
 			<legend>Nouveau Musée</legend>

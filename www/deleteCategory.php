@@ -2,7 +2,7 @@
 
 require ("../autoload.php");
 
-$controller = new museo\controller\categoryController();
+$controller = new Museo\Controller\CategoryController();
 $data = $controller->deleteAction();
 extract($data);
 
@@ -46,7 +46,7 @@ extract($data);
 			<hr />
 			</form>
 		</div>
-		
+
 	</div>
 </div>
 

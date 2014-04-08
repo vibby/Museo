@@ -1,11 +1,11 @@
 <?php
 
-namespace museo\model;
+namespace Museo\Model;
 
-use museo\lib\objectManager;
-use museo\lib\dbObjectInterface;
+use Museo\Lib\ObjectManager;
+use Museo\Lib\DbObjectInterface;
 
-class categoryManager extends objectManager implements dbObjectInterface
+class CategoryManager extends ObjectManager implements DbObjectInterface
 {
 
 	// get the name of the table in db
@@ -64,7 +64,7 @@ class categoryManager extends objectManager implements dbObjectInterface
 	
 		$tree = array();
 		foreach ($parents as $parent){
-			$category = new category($parent);
+			$category = new Category($parent);
 			if(isset($list[$parent['category_id']])){
 				$children = $this->recursiveTree($list, $list[$parent['category_id']]);
 				$category->setChildren($children);

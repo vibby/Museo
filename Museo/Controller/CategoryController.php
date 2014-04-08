@@ -8,18 +8,18 @@
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
  
-namespace museo\controller;
+namespace Museo\Controller;
 
-use museo\model\categoryManager;
-use museo\model\category;
-use museo\lib\controller;
+use Museo\Model\CategoryManager;
+use Museo\Model\Category;
+use Museo\Lib\Controller;
 
-class categoryController extends controller
+class CategoryController extends controller
 {
 	// Action : List categories
 	function listAction() {	
 
-		$categoryManager = new categoryManager($this->db);
+		$categoryManager = new CategoryManager($this->db);
 		$dbCategories = $categoryManager->getAll();
 		$tree = $categoryManager->buildTree($dbCategories);
 		
@@ -38,7 +38,7 @@ class categoryController extends controller
 		
 		$category = $this->getOneById();
 		
-		$categoryManager = new categoryManager($this->db);
+		$categoryManager = new CategoryManager($this->db);
 		// If requested, let's move children to upper level in hierachy before deletion
 		if($_POST['childrenInherit'] == 'liftUp') {
 			$categoryManager->replaceParentId($category->getId(), $category->getParentId());
@@ -55,7 +55,7 @@ class categoryController extends controller
 			$id = $this->requireParam('id', \FILTER_VALIDATE_INT);
 		}
 		
-		$categoryManager = new categoryManager($this->db);
+		$categoryManager = new CategoryManager($this->db);
 		$collection = $categoryManager->getOneById($id);
 				
 		return ($collection);
@@ -79,7 +79,7 @@ class categoryController extends controller
 	// Get the tree of categories
 	private function getCategoriesTree() {
 
-		$categoryManager = new categoryManager($this->db);
+		$categoryManager = new CategoryManager($this->db);
 		return $categoryManager->getCategoriesTree();
 		
 	}
@@ -110,7 +110,7 @@ class categoryController extends controller
 		$this->initTreatForm($sessionNamePrefix);
 		
 		// Clear data
-		$categoryManager = new categoryManager($this->db);
+		$categoryManager = new CategoryManager($this->db);
 		$taintedData = $_POST['category'];
 		$data = $categoryManager->sanitizeData($taintedData);
 				

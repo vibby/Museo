@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/foundation.css" />
 	<link rel="stylesheet" href="css/museo.css" />
 	<link rel="stylesheet" href="select2-3.4.1/select2.css" />
+	<link rel="icon" href="favicon.ico" />
 
 	<script src="js/vendor/custom.modernizr.js"></script>
   </head>
@@ -23,7 +24,7 @@
 			<h2 class="title">Muséo</h2><span class="subline">Just a CRUD from scratch by Vibby for Naoned</span>
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<div class="large-12 columns">
 
@@ -55,7 +56,7 @@
 					</ul>
 				  </section>
 
-				
+
 			</nav>
 		</div>
 	  </div>
@@ -72,6 +73,5 @@
 			</div>
 		  </div>
 	<?php endif; ?>
-	
-	  
-		
+
+

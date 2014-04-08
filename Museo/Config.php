@@ -1,20 +1,19 @@
 <?php
 
-namespace museo;
+namespace Museo;
 
-class config {
+class Config {
 
 	function __construct() {
-		$this->config = array(	
+		$this->config = array(
 			'dbHost'     => 'localhost',
 			'dbName'     => 'museo',
 			'dbUser'     => 'root',
 			'dbPassword' => '',
-			
 			'debug'      => true,
 		);
 	}
-	
+
 	function get($key) {
 		return $this->config[$key];
 	}

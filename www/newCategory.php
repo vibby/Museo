@@ -2,7 +2,7 @@
 
 require ("../autoload.php");
 
-$controller = new museo\controller\categoryController();
+$controller = new Museo\Controller\CategoryController();
 $data = $controller->newAction();
 extract($data);
 
@@ -12,7 +12,7 @@ extract($data);
 
 <div class="row">
 	<div class="large-12 columns">
-	
+
 		<form action="createCategory.php" method="POST">
 		  <fieldset>
 			<legend>Nouvelle catégorie</legend>

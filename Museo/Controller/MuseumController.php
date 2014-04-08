@@ -8,19 +8,19 @@
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
  
-namespace museo\controller;
+namespace Museo\Controller;
 
-use museo\model\museumManager;
-use museo\model\museum;
-use museo\model\categoryManager;
-use museo\lib\controller;
+use Museo\Model\MuseumManager;
+use Museo\Model\Museum;
+use Museo\Model\CategoryManager;
+use Museo\Lib\Controller;
 
-class museumController extends controller
+class MuseumController extends controller
 {
 	// Action : List museums
 	function listAction() {
 			
-		$museumManager = new museumManager($this->db);
+		$museumManager = new MuseumManager($this->db);
 		$collection = $museumManager->getAll();
 		
 		return (array("collection" => $collection));
@@ -48,7 +48,7 @@ class museumController extends controller
 			$id = $this->requireParam('id', \FILTER_VALIDATE_INT);
 		}
 		
-		$museumManager = new museumManager($this->db);
+		$museumManager = new MuseumManager($this->db);
 		$museum = $museumManager->getOneById($id);
 		
 		return ($museum);
@@ -59,8 +59,8 @@ class museumController extends controller
 	
 		$id = $this->requireParam('id', \FILTER_VALIDATE_INT);
 
-		$museumManager = new museumManager($this->db);
-		$museum = $museumManager->deleteOneById($id);
+		$museumManager = new MuseumManager($this->db);
+		$museumManager->deleteOneById($id);
 		
 		return (true);
 	}	
@@ -83,7 +83,7 @@ class museumController extends controller
 	// Get the tree of categories
 	private function getCategoriesTree() {
 
-		$categoryManager = new categoryManager($this->db);
+		$categoryManager = new CategoryManager($this->db);
 		return $categoryManager->getCategoriesTree();
 	}
 	
@@ -111,7 +111,7 @@ class museumController extends controller
 		$this->initTreatForm($sessionNamePrefix);
 		
 		// Clear data
-		$museumManager = new museumManager($this->db);
+		$museumManager = new MuseumManager($this->db);
 		$taintedData = $_POST['museum'];
 		$data = $museumManager->sanitizeData($taintedData);
 		

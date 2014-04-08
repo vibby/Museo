@@ -1,5 +1,5 @@
 <?php
 
-require ("museo/lib/autoloader.php");
-$classLoader = new SplClassLoader('museo', __DIR__);
+require ("Museo/Lib/Autoloader.php");
+$classLoader = new SplClassLoader('Museo', __DIR__);
 $classLoader->register();

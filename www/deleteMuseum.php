@@ -2,7 +2,7 @@
 
 require ("../autoload.php");
 
-$controller = new museo\controller\museumController();
+$controller = new Museo\Controller\MuseumController();
 $data = $controller->deleteAction();
 extract($data);
 

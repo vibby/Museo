@@ -2,6 +2,6 @@
 
 require ("../autoload.php");
 
-$controller = new museo\controller\categoryController();
+$controller = new Museo\Controller\CategoryController();
 $data = $controller->createAction();
 

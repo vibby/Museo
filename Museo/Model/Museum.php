@@ -8,12 +8,12 @@
  * @author Vibby <vincent.beauvivre@gmail.com>
  */
  
-namespace museo\model;
+namespace Museo\Model;
 
-use museo\lib\dbObject;
-use museo\lib\dbObjectInterface;
+use Museo\Lib\DbObject;
+use Museo\Lib\DbObjectInterface;
 
-class Museum extends dbObject implements dbObjectInterface
+class Museum extends DbObject implements DbObjectInterface
 {
 	protected $id = null;
 	protected $name = "";
